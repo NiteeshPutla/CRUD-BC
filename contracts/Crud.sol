@@ -32,7 +32,13 @@ contract CRUD{
         }
         return false;
     }
-
+    function readEmployee(string memory email)external view returns(string memory _name,string memory _email, uint256 _age,address walletAddress){
+        for(uint i=0; i<totalEmployees; i++){
+            if(compareStrings(employees[i].email,email)){
+                return(employees[i].name,employees[i].email,employees[i].age,employees[i].walletAddress);
+            }
+    }
+}
     function deleteEmployee(string memory email)public returns (bool success){
         require(totalEmployees>0);
         for(uint i=0; i<totalEmployees; i++){

@@ -35,9 +35,13 @@ async function main() {
    const employee2=await crud.employees(0);
     console.log(employee2);
 
-   await crud.deleteEmployee("niteeshjoyal@gmail.com")
-   const employeeDelete=await crud.employees(0);
-   console.log(employeeDelete);
+    await crud.deleteEmployee("niteeshjoyal@gmail.com")
+    const employeeDelete=await crud.employees(0);
+    console.log(employeeDelete);
+
+   await crud.readEmployee("niteeshjoyal@gmail.com")
+   const employeeRead=await crud.employees(0);
+   console.log(employeeRead);
 
 }
 
